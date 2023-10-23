@@ -1,17 +1,27 @@
 import MyHeader from './MyHeader';
 import MyFooter from './MyFooter';
-import Counter from './Counter'
+import Counter from './Counter';
+import Container from './Container';
 import React from 'react';
 
 
 function App() {
+  const counterProps = {
+    a:1, 
+    b:2,
+    c:3,
+    d:4,
+    e:5
+  }
 
   return (
-    <div>
-      <MyHeader />
-      <Counter />
-      <MyFooter />
-    </div>
+    <Container>
+      <div>
+        <MyHeader />
+        <Counter {...counterProps}/>
+        <MyFooter />
+      </div>
+    </Container>
   );
 }
 
