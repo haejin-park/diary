@@ -1,27 +1,12 @@
-import MyHeader from './MyHeader';
-import MyFooter from './MyFooter';
-import Counter from './Counter';
-import Container from './Container';
-import React from 'react';
+import "./App.css";
+import DiaryEditor from "./DiaryEditor";
 
 
-function App() {
-  const counterProps = {
-    a:1, 
-    b:2,
-    c:3,
-    d:4,
-    e:5
-  }
-
+const App = () => {
   return (
-    <Container>
-      <div>
-        <MyHeader />
-        <Counter {...counterProps}/>
-        <MyFooter />
+      <div className="App">
+        <DiaryEditor />
       </div>
-    </Container>
   );
 }
 
