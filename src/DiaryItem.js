@@ -29,7 +29,6 @@ const DiaryItem = ({
                 onEdit(id, localContent);
                 toggleIsEdit();
             }
-            onEdit(id, localContent)
         }
     return (
 
