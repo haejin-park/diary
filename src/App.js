@@ -37,17 +37,17 @@ const App = () => {
     dataId.current += 1;
     setData((data) => [newItem, ...data]);
   }, [data]);
-  const onRemove = (targetId) => {
-    const newDiaryList = data.filter((it) => it.id !== targetId);
-    setData(newDiaryList);
-  }
-  const onEdit = (targetId, newContent) => {
-    setData(
+  const onRemove = useCallback((targetId) => {
+    setData(data => data.filter((it) => it.id !== targetId));
+  },[]);
+ 
+  const onEdit = useCallback((targetId, newContent) => {
+    setData((data) => 
       data.map((it) =>
         it.id === targetId ? {...it, content: newContent}: it
       )
-    )
-  }
+    );
+  }, []);
   const getDiaryAnalysis = useMemo(
     () => {
     console.log("일기분석시작");
