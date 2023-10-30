@@ -1,14 +1,13 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, {useState, useRef, useContext} from 'react';
+import {DiaryDispatchContext} from "./App";
+
 const DiaryItem = ({
-    onEdit,
-    onRemove, 
     author, 
     content, 
     created_date, 
     emotion, 
     id}) => {
-        useEffect(() => {console.log(`${id}번 째 아이템 렌더`)});
-
+        const {onRemove, onEdit} = useContext(DiaryDispatchContext);
         const handleRemove = () => {
             if(window.confirm(`${id}번째 일기를 정말 삭제하시겠습니까?`)){
                 onRemove(id)
@@ -33,7 +32,6 @@ const DiaryItem = ({
             }
         }
     return (
-
         <div className="DiaryItem">
             <div className="info">
                 <span>
